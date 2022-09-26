@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./styles/App.css";
+import uniqid from "uniqid";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import EditMode from "./components/editMode";
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      mode: "edit",
+      personalInfo: { name: null, email: null, phone: null },
+      eduInfo: [
+        // add to this via another component, new arr for each panel
+      ],
+      expInfo: [
+        // ...and here too
+      ],
+      id: uniqid(),
+    };
+  }
+
+  render() {
+    return (
+      <div className="mainCont">
+        <EditMode info={this.state} />
+      </div>
+    );
+  }
 }
 
 export default App;
