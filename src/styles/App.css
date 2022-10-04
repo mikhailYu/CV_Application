@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+  background: none;
+  outline: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+
+  font-family: Playfair Display;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald&family=Playfair+Display&display=swap");
+
+:root {
+  background-color: rgb(134, 141, 143);
+}
+
+.mainCont,
+.editMode,
+.editPanel,
+.inputsCont,
+.previewMode,
+.previewModeCont,
+.previewBox,
+.previewLine {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainCont {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.editMode,
+.previewModeCont {
+  gap: 20px;
+}
+
+.editPanel {
+  border-radius: 20px;
+
+  background-color: rgb(255, 255, 255);
+
+  padding: 30px;
+}
+
+.editPanel,
+.previewMode,
+button {
+  filter: drop-shadow(0px 3px 5px rgb(26, 26, 28));
+}
+
+.editPanel.editPanelPerInfo {
+  width: 400px;
+}
+
+.editPanel.editPanelEdu,
+.editPanel.editPanelExp {
+  width: 500px;
+}
+
+.inputsCont {
+  gap: 20px;
+}
+
+input {
+  border-bottom: 1px solid rgb(0, 0, 0);
+  width: 300px;
+  height: 25px;
+  font-size: 20px;
+  text-align: center;
+}
+
+textArea {
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  width: 400px;
+  height: 200px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.mappedPanels {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.warningMessage {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+
+  display: none;
+}
+
+.eduInputs > input,
+.expInputs > input {
+  width: 400px;
+}
+
+#submitBtn,
+#switchToEditBtn {
+  background-color: rgb(0, 29, 44);
+  font-size: 20px;
+  width: 100px;
+  height: 50px;
+  color: white;
+  border-radius: 5px;
+  transition: all 20ms ease-in-out;
+}
+
+#addEduBtn,
+#addExpBtn {
+  background-color: rgb(0, 29, 44);
+  font-size: 15px;
+  width: 200px;
+  height: 50px;
+  color: white;
+  border-radius: 5px;
+  transition: all 20ms ease-in-out;
+}
+
+.delEduBtn,
+.delExpBtn {
+  background-color: rgb(255, 33, 59);
+  font-size: 15px;
+  width: 100px;
+  height: 50px;
+  color: white;
+  border-radius: 5px;
+  transition: all 20ms ease-in-out;
+}
+
+button:hover {
+  filter: brightness(1.5) drop-shadow(0px 0px 3px rgb(26, 26, 28));
+
+  cursor: pointer;
+
+  transform: scale(1.02);
+}
+
+button:active {
+  filter: brightness(0.6);
+  transform: scale(0.98);
+}
+
+.previewMode {
+  gap: 40px;
+
+  border-radius: 10px;
+  width: 500px;
+  min-width: 500px;
+  background-color: rgb(255, 255, 255);
+}
+
+.previewBox {
+  gap: 10px;
+}
+
+.previewBox.previewGap {
+  padding-bottom: 15px;
+}
+
+.previewTitle {
+  font-size: 40px;
+
+  text-decoration: underline;
+}
+
+.previewLine {
+  font-size: 20px;
+  width: 80%;
+  text-align: center;
+}
+.previewLabel {
+  font-weight: bold;
+}

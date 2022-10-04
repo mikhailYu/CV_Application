@@ -1,26 +1,42 @@
 import React from "react";
 
 function InfoPanel(props) {
+  let info = props.info;
+  function handleChange(key, e) {
+    info[key] = e.target.value;
+  }
   function checkValue(key) {
-    let info = props.info;
-
     if (info[key]) {
       return info[key];
-    } else if (key == "name") {
-      return "Full Name";
-    } else if (key == "email") {
-      return "Email Address";
     } else {
-      return "Phone Number";
+      return;
     }
   }
 
   return (
-    <div className="editPanel">
-      <div>
-        <input id="nameInput" placeholder={checkValue("name")}></input>
-        <input id="emailInput" placeholder={checkValue("email")}></input>
-        <input id="phoneNumInput" placeholder={checkValue("phone")}></input>
+    <div className="editPanel editPanelPerInfo">
+      <div className="inputsCont personalInfoInputs">
+        <input
+          id="nameInput"
+          placeholder="Full Name"
+          defaultValue={checkValue("name")}
+          onChange={(e) => handleChange("name", e)}
+          maxLength="40"
+        ></input>
+        <input
+          id="emailInput"
+          placeholder="Email Address"
+          defaultValue={checkValue("email")}
+          onChange={(e) => handleChange("email", e)}
+          maxLength="40"
+        ></input>
+        <input
+          id="phoneNumInput"
+          placeholder="Phone Number"
+          defaultValue={checkValue("phone")}
+          onChange={(e) => handleChange("phone", e)}
+          maxLength="25"
+        ></input>
       </div>
     </div>
   );
